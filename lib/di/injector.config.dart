@@ -12,6 +12,7 @@ import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
+import '../features/presentation/bloc/kanban_bloc.dart' as _i706;
 import 'app_module.dart' as _i460;
 
 const String _prod = 'prod';
@@ -29,6 +30,7 @@ _i174.GetIt $initGetIt(
     environmentFilter,
   );
   final appModule = _$AppModule();
+  gh.factory<_i706.KanbanBloc>(() => _i706.KanbanBloc());
   gh.lazySingleton<_i361.Dio>(
     () => appModule.dio,
     instanceName: 'dio_client',
